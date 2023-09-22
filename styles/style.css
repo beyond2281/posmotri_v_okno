@@ -66,9 +66,6 @@ ol {
 }
 
 .content__list {
-  gap: 30px;
-  display: flex;
-  flex-direction: column;
   position: relative;
   overflow: auto;
   block-size: 298px;
@@ -77,9 +74,9 @@ ol {
 .result__video-container {
   position: relative;
   margin-block-end: 16px;
+  overflow: hidden;
   inline-size: 711px;
   block-size: 386px;
-  overflow: hidden;
 }
 
 .result__video {
@@ -103,6 +100,10 @@ ol {
   outline: 1px solid #FFF;
 }
 
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
+
 .content__video-card-thumbnail {
   object-fit: cover;
   object-position: center;
@@ -114,17 +115,12 @@ ol {
   inline-size: 50%;
 }
 
-.content__video-card-description-container:hover {
+.content__video-card:hover {
   text-decoration: underline;
 }
 
-.content__card-link_current:active {
+.content__card-link_current {
   background-color: #545050;
-}
-
-.preloader-template {
-  position: absolute;
-  inset: 0;
 }
 
 .visually-hidden {
@@ -140,21 +136,21 @@ ol {
 .search-form__fieldset-title {
   margin-block-end: 6px;
   color: #FFF;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  line-height: normal;
+  line-height: 1.2;
 }
 
 .title {
   margin-block-end: 28px;
   color: #FFF;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   font-style: normal;
-  line-height: 94%;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
@@ -170,22 +166,22 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   font-style: normal;
-  line-height: 100%;
+  line-height: 1;
   text-transform: uppercase;  
 }
 
 .content__video-card-description {
   margin-block-start: 6px;
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  line-height: 16.2px;
+  line-height: 0.90;
 }
 
 .search-form__fieldset {
@@ -202,24 +198,25 @@ ol {
   border: none;
   padding: 2.5px 14px 2.5px 0;
   color: #FFF;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.2;
   background-color: transparent;
   inline-size: 225px;
   appearance: none;
-  font-family: 'Fira Sans Condensed';
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.70);
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
-  line-height: normal;
+  line-height: 1.2;
 }
+
 .search-form__textfield:focus {
   outline: none;
 }
@@ -228,8 +225,8 @@ ol {
   outline: none;
 }
 
-.search-form__label:hover {
-  border-color: #fff;
+.search-form__label:hover .search-form__label-text {
+  border-block-end: 1px solid #fff;
   cursor: pointer;
 }
 
@@ -241,7 +238,7 @@ ol {
 .search-form__label {
   display: flex;
   gap: 5px;
-  margin-block-end: 1px solid transparent;
+  cursor: pointer;
   inline-size: fit-content;
 }
 
@@ -253,8 +250,7 @@ ol {
 
 .search-form__pseudo-checkbox {
   content: '';
-  position: relative;
-  display: inline-block;
+  display: flex;
   margin-block-start: 2px;
   border: 1px solid #FFF;
   inline-size: 19px;
@@ -263,9 +259,8 @@ ol {
 
 .search-form__checkbox[type='checkbox']:checked + .search-form__pseudo-checkbox::before {
   content: '';
-  position: absolute;
-  inset: 0;
   align-items: center;
+  width: 100%;
   border: 1px solid #000;
   background-color: #fff;
 }
@@ -276,11 +271,11 @@ ol {
   border: 1px solid #fff;
   padding: 0;
   color: #FFF;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   font-style: normal;
-  line-height: normal;
+  line-height: 1.2;
   background-color: transparent;
   cursor: pointer;
 }
@@ -307,6 +302,6 @@ ol {
 }
 
 .more-button {
-  margin: 30px auto 0 auto;
+  margin: 1px auto;
   padding: 6px 143.4px;
 }
