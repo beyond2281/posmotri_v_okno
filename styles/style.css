@@ -44,7 +44,7 @@ ol {
   justify-content: center;
   align-items: end;
   gap: 30px;
-  margin: auto;
+  margin: 0 auto;
   padding: 133px 30px;
 }
 
