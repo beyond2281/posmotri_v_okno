@@ -9,6 +9,8 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
   margin: auto;
   overflow: hidden;
   color: #fff;
